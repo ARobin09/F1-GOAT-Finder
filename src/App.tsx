@@ -8,7 +8,7 @@ import { Driver, DriverScore } from './types';
 
 // Use Vite's environment variables to switch between development and production URLs.
 const API_BASE_URL = import.meta.env.PROD
-  ? 'https://f1-goat-backend.onrender.com' // IMPORTANT: Replace with your deployed backend URL
+  ? 'https://f1-goat-backend.onrender.com'
   : 'http://127.0.0.1:5000';
 
 // A map to provide richer data than just a name, like a country flag.
