@@ -6,7 +6,10 @@ import { FilterControls } from './components/FilterControls';
 import { ResultsDisplay } from './components/ResultsDisplay';
 import { Driver, DriverScore } from './types';
 
-const API_BASE_URL = 'http://127.0.0.1:5000';
+// Use Vite's environment variables to switch between development and production URLs.
+const API_BASE_URL = import.meta.env.PROD
+  ? 'https://f1-goat-backend.onrender.com' // IMPORTANT: Replace with your deployed backend URL
+  : 'http://127.0.0.1:5000';
 
 // A map to provide richer data than just a name, like a country flag.
 // In a real app, this might come from a second API endpoint or be stored client-side.
