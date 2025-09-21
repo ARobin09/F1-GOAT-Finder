@@ -18,12 +18,7 @@ const DRIVER_DETAILS: Record<string, { country: string }> = {
   'Max Verstappen': { country: '🇳🇱' },
   'Fernando Alonso': { country: '🇪🇸' },
   'Charles Leclerc': { country: '🇲🇨' },
-  'Lando Norris': { country: '🇬🇧' },
-  'Ayrton Senna': { country: '🇧🇷' },
-  'Michael Schumacher': { country: '🇩🇪' },
-  'Sebastian Vettel': { country: '🇩🇪' },
-  'Niki Lauda': { country: '🇦🇹' },
-  'Jim Clark': { country: '🇬🇧' },
+  'Lando Norris': { country: '🇬🇧' }
 };
 
 const App: React.FC = () => {

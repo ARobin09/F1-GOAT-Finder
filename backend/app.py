@@ -13,7 +13,7 @@ load_dotenv()
 app = Flask(__name__)
 # ✅ Allow all origins properly (for dev only)
 #CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=False)
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "https://arobin09.github.io"]}}) #  ["http://localhost:5173", "https://arobin09.github.io"]
+CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "https://arobin09.github.io/F1-GOAT-Finder/]}}) #  ["http://localhost:5173", "https://arobin09.github.io"]
 
 # --- Database Connection ---
 MONGO_URI = os.getenv('MONGO_URI')
@@ -39,8 +39,6 @@ CIRCUIT_ID_MAP = {
     "Silverstone, UK": 9,
     "Spa-Francorchamps, Belgium": 13,
     "Monza, Italy": 14,
-    "Suzuka, Japan": 22,
-    "Interlagos, Brazil": 18,
 }
 
 
