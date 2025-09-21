@@ -12,14 +12,16 @@ const API_BASE_URL = import.meta.env.PROD
   : 'http://127.0.0.1:5000';
 
 // A map to provide richer data than just a name, like a country flag.
-// In a real app, this might come from a second API endpoint or be stored client-side.
 const DRIVER_DETAILS: Record<string, { country: string }> = {
-  'Lewis Hamilton': { country: '🇬🇧' },
-  'Max Verstappen': { country: '🇳🇱' },
-  'Fernando Alonso': { country: '🇪🇸' },
-  'Charles Leclerc': { country: '🇲🇨' },
-  'Lando Norris': { country: '🇬🇧' }
-};
+  'Lewis Hamilton': { country: '' },
+  'Max Verstappen': { country: '' },
+  'Fernando Alonso': { country: '' },
+  'Nico Rosberg': { country: '' },
+  'Ayrton Senna': { country: '' },
+  'Alain Prost' : { country: '' },
+  'Kimi Raikkonen': {country:''},
+  'Sebastian Vettel': {country:''}
+  };
 
 const App: React.FC = () => {
   const [allDrivers, setAllDrivers] = useState<Driver[]>([]);
@@ -50,7 +52,7 @@ const App: React.FC = () => {
         const transformedDrivers: Driver[] = Object.keys(driverData).map((name) => ({
           id: String(driverData[name]), // Use the real ID from the backend
           name: name,
-          country: DRIVER_DETAILS[name]?.country || '🏳️‍🌈', // Get country or use a placeholder
+          country: DRIVER_DETAILS[name]?.country, // Get country or use a placeholder
         }));
         
         const trackData: Record<string, number> = data.circuits || {};

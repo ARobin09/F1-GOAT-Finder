@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { DriverScore } from '../src/types';
+import { DriverScore } from '../types';
 
 interface ResultsDisplayProps {
   isLoading: boolean;

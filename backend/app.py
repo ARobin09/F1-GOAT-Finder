@@ -34,8 +34,11 @@ DRIVER_ID_MAP = {
     "Lewis Hamilton": 1,
     "Max Verstappen": 830,
     "Fernando Alonso": 4,
-    "Charles Leclerc": 844,
-    "Lando Norris": 846,
+    "Nico Rosberg": 3,
+    "Ayrton Senna": 102,
+    "Alain Prost": 117,
+    "Kimi Raikkonen": 8,
+    "Sebastian Vettel": 20
 }
 
 CIRCUIT_ID_MAP = {

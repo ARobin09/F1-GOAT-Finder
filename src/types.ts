@@ -1,7 +1,7 @@
 export interface Driver {
   id: string;
   name: string;
-  country: string;
+  country?: string;
 }
 
 export interface DriverScore {
