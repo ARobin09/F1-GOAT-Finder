@@ -11,11 +11,8 @@ from collections import defaultdict
 load_dotenv()
 
 app = Flask(__name__)
-# ✅ Allow all origins properly (for dev only)
-#CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=False)
-# CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "https://arobin09.github.io/F1-GOAT-Finder/]}}) #  ["http://localhost:5173", "https://arobin09.github.io"]
-# Replace your current CORS line with this:
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+# CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, origins=["http://localhost:5173", "https://arobin09.github.io"])
 # --- Database Connection ---
 MONGO_URI = os.getenv('MONGO_URI')
 if MONGO_URI:
