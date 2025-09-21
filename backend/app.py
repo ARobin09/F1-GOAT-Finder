@@ -12,7 +12,8 @@ load_dotenv()
 
 app = Flask(__name__)
 # ✅ Allow all origins properly (for dev only)
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=False)
+CORS(app, resources={r"/api/*": {"origins": ["https://arobin09.github.io"]}})
+#CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=False)
 # CORS(app, resources={r"/api/*": {"origins": "*"}}) #  ["http://localhost:5173", "https://arobin09.github.io"]
 
 # --- Database Connection ---
