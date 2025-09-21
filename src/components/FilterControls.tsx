@@ -1,22 +1,16 @@
-
 import React from 'react';
-import { ERAS, TRACKS, WEATHER_CONDITIONS } from '../constants';
-import { Weather } from '../types';
 
 interface FilterControlsProps {
-  selectedEra: string;
-  setSelectedEra: (era: string) => void;
-  selectedTrack: string;
-  setSelectedTrack: (track: string) => void;
-  selectedWeather: Weather;
-  setSelectedWeather: (weather: Weather) => void;
+  tracks: Record<string, number>;
+  selectedTrack: number;
+  setSelectedTrack: (trackId: number) => void;
 }
 
 const SelectInput: React.FC<{
   label: string;
-  value: string;
+  value: number;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  options: string[];
+  options: Record<string, number>;
 }> = ({ label, value, onChange, options }) => (
   <div>
     <label htmlFor={label} className="block text-sm font-medium text-gray-300 mb-2">
@@ -28,9 +22,9 @@ const SelectInput: React.FC<{
       onChange={onChange}
       className="w-full bg-gray-900 border border-gray-600 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-red-500 transition"
     >
-      {options.map(option => (
-        <option key={option} value={option}>
-          {option}
+      {Object.entries(options).map(([name, id]) => (
+        <option key={id} value={id}>
+          {name}
         </option>
       ))}
     </select>
@@ -38,34 +32,18 @@ const SelectInput: React.FC<{
 );
 
 export const FilterControls: React.FC<FilterControlsProps> = ({
-  selectedEra,
-  setSelectedEra,
+  tracks,
   selectedTrack,
   setSelectedTrack,
-  selectedWeather,
-  setSelectedWeather,
 }) => {
   return (
     <>
       <SelectInput
-        label="Select Era"
-        value={selectedEra}
-        onChange={e => setSelectedEra(e.target.value)}
-        options={ERAS}
-      />
-      <SelectInput
         label="Select Track"
         value={selectedTrack}
-        onChange={e => setSelectedTrack(e.target.value)}
-        options={TRACKS}
-      />
-      <SelectInput
-        label="Select Weather"
-        value={selectedWeather}
-        onChange={e => setSelectedWeather(e.target.value as Weather)}
-        options={WEATHER_CONDITIONS}
+        onChange={e => setSelectedTrack(Number(e.target.value))}
+        options={tracks}
       />
     </>
   );
 };
-   
