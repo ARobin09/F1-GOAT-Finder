@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/F1-GOAT-Finder/',
+  base: '/f1-goat-finder/',
 })
